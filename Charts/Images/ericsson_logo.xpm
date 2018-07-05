@@ -1,5 +1,5 @@
 /* XPM */
-static const char *_200px_Ericsson_logo_svg_3[] = {
+static const char *ericsson_logo[] = {
 /* columns rows colors chars-per-pixel */
 "50 50 15 1 ",
 "  c #00275D",
