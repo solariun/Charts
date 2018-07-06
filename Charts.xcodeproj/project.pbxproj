@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		674D840E20EDA845003DBEC0 /* libLibSolar++.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 674D840D20EDA845003DBEC0 /* libLibSolar++.a */; };
 		675141C520EDA7D2009EABF5 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 675141C420EDA7D2009EABF5 /* main.cpp */; };
+		6799E01320EEAA20008FDAEF /* DrawChart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6799E01120EEAA20008FDAEF /* DrawChart.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,8 @@
 		674D840D20EDA845003DBEC0 /* libLibSolar++.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libLibSolar++.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		675141C120EDA7D2009EABF5 /* Charts */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Charts; sourceTree = BUILT_PRODUCTS_DIR; };
 		675141C420EDA7D2009EABF5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6799E01120EEAA20008FDAEF /* DrawChart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DrawChart.cpp; path = ../../../../desenv/xworkspace/Charts/Charts/DrawChart.cpp; sourceTree = "<group>"; };
+		6799E01220EEAA20008FDAEF /* DrawChart.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = DrawChart.hpp; path = ../../../../desenv/xworkspace/Charts/Charts/DrawChart.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 			children = (
 				674D840920EDA829003DBEC0 /* Images */,
 				675141C420EDA7D2009EABF5 /* main.cpp */,
+				6799E01120EEAA20008FDAEF /* DrawChart.cpp */,
+				6799E01220EEAA20008FDAEF /* DrawChart.hpp */,
 			);
 			path = Charts;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6799E01320EEAA20008FDAEF /* DrawChart.cpp in Sources */,
 				675141C520EDA7D2009EABF5 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +268,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "/desenv/xworkspace/LibSolar++/";
-				LIBRARY_SEARCH_PATHS = "/desenv/xworkspace/LibSolar++/";
+				HEADER_SEARCH_PATHS = "/desenv/xworkspace/LibSolar-/";
+				LIBRARY_SEARCH_PATHS = "/desenv/xworkspace/LibSolar-/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -272,8 +278,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "/desenv/xworkspace/LibSolar++/";
-				LIBRARY_SEARCH_PATHS = "/desenv/xworkspace/LibSolar++/";
+				HEADER_SEARCH_PATHS = "/desenv/xworkspace/LibSolar-/";
+				LIBRARY_SEARCH_PATHS = "/desenv/xworkspace/LibSolar-/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
