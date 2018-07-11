@@ -267,9 +267,13 @@
 		675141C920EDA7D2009EABF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "/desenv/xworkspace/LibSolar-/";
-				LIBRARY_SEARCH_PATHS = "/desenv/xworkspace/LibSolar-/";
+				GCC_DYNAMIC_NO_PIC = YES;
+				HEADER_SEARCH_PATHS = "/desenv/xworkspace/LibSolar++/";
+				LIBRARY_SEARCH_PATHS = "/desenv/xworkspace/LibSolar++/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -277,9 +281,13 @@
 		675141CA20EDA7D2009EABF5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "/desenv/xworkspace/LibSolar-/";
-				LIBRARY_SEARCH_PATHS = "/desenv/xworkspace/LibSolar-/";
+				GCC_DYNAMIC_NO_PIC = YES;
+				HEADER_SEARCH_PATHS = "/desenv/xworkspace/LibSolar++/";
+				LIBRARY_SEARCH_PATHS = "/desenv/xworkspace/LibSolar++/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
