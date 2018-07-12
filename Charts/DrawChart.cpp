@@ -65,7 +65,6 @@ void DrawChart::generate(uint nWidth, uint nHeight, const string strBGColor, con
     
     //Color colorBG = MkColor(strBGColor);
     Color colorBG = MkColor(255,255,255,0);
-    
     gChartContext.DrawFillBox(0, 0, nWidth, nHeight, 0, colorBG);
 
     gChartContext.DrawXPM((nWidth/2)-(250/2), (nHeight/2)-(51/2), 1, 1, 250, 51, 10, (const char**) ericsson_landscape3);
@@ -73,6 +72,10 @@ void DrawChart::generate(uint nWidth, uint nHeight, const string strBGColor, con
     
     gChartContext.SelectDefaultFont(0);
     gChartContext.GPrint(5, 14, 0, MkColor(0,0,0), strTitle.c_str());
+    
+    colorBG = MkColor(0, 0, 0);
+    gChartContext.DrawLine(nWidth-1, 0, nWidth-1, nHeight, 0, colorBG);
+    
     
     //vector<uint8_t> pJPGdata;
     
@@ -100,6 +103,8 @@ jpegFile::jpegFile(Graphic& pGraphic, const std::string strFile): jpeg(pGraphic)
     
     Verify (ofFile.is_open(), "ERROR: " + std::strerror(errno), DC_GENERATE_FILE_OPEN_ERROR, DrawChartException);
     
+    ofFile.seekp(0, ios_base::beg);
+    
     //Verify ((nFD = open (strFile.c_str(), O_WRONLY | O_CREAT | O_TRUNC, 0664)) > 0, "Error: " + std::strerror(errno), 1, DrawChartException);
 }
 
@@ -115,5 +120,7 @@ void jpegFile::write_jpeg(const uint8_t* pData, const uint32_t nDataSize)
     _LOG << "Writting: [" << nDataSize << "]" << endl;
     
     Verify (ofFile.write((const char*) pData, nDataSize), "Error: " + std::strerror(errno), DC_GENERATE_FILE_ERR_READING, DrawChartException);
+    
+    //Verify (write(nFD, (const char*) pData, nDataSize) >= 0, "Error: " + std::strerror(errno), DC_GENERATE_FILE_ERR_READING, DrawChartException);
 }
 
