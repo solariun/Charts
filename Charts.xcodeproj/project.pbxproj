@@ -30,6 +30,7 @@
 		674D840D20EDA845003DBEC0 /* libLibSolar++.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libLibSolar++.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		675141C120EDA7D2009EABF5 /* Charts */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Charts; sourceTree = BUILT_PRODUCTS_DIR; };
 		675141C420EDA7D2009EABF5 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6755362920FEF623004DC94A /* generateData.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = generateData.sh; sourceTree = "<group>"; };
 		6799E01120EEAA20008FDAEF /* DrawChart.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = DrawChart.cpp; path = ../../../../desenv/xworkspace/Charts/Charts/DrawChart.cpp; sourceTree = "<group>"; };
 		6799E01220EEAA20008FDAEF /* DrawChart.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = DrawChart.hpp; path = ../../../../desenv/xworkspace/Charts/Charts/DrawChart.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +67,7 @@
 		675141B820EDA7D2009EABF5 = {
 			isa = PBXGroup;
 			children = (
+				6755362820FEF603004DC94A /* Resources */,
 				675141C320EDA7D2009EABF5 /* Charts */,
 				675141C220EDA7D2009EABF5 /* Products */,
 				674D840C20EDA845003DBEC0 /* Frameworks */,
@@ -89,6 +91,14 @@
 				6799E01220EEAA20008FDAEF /* DrawChart.hpp */,
 			);
 			path = Charts;
+			sourceTree = "<group>";
+		};
+		6755362820FEF603004DC94A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6755362920FEF623004DC94A /* generateData.sh */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

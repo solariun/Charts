@@ -28,14 +28,14 @@
 
 int main(int argc, const char * argv[])
 {
-    VERIFY (argc == 6, "Error, use  nWidth nHeight ColorRGBA(FFFFFF00) 'Title' 'file_name.jpg' ", 1);
+    VERIFY (argc == 7, "Error, use  nWidth nHeight ColorRGBA(FFFFFF00) 'Title' 'file_name.jpg' MaxY", 1);
 
     uint nWidth = atoi (argv[1]);
     uint nHeight = atoi (argv [2]);
 
-    DrawChart objDrawChart;
+    DrawChart objDrawChart ((uint32_t) atoi (argv[6]));
     
-    Util::PrintStandardTypeSizes();
+    //Util::PrintStandardTypeSizes();
     
     
     //char chCinbuffer [64 * 1024]; // 64k buffer
@@ -46,7 +46,7 @@ int main(int argc, const char * argv[])
     uint nCount = 0;
     
     vector<string> vecData;
-    vector<unsigned long long> vecRow;
+    vector<int> vecRow;
     
     string strValue = "";
     
@@ -56,13 +56,13 @@ int main(int argc, const char * argv[])
         
         if (nCount == 1)
         {
-            _LOG << "Header: [" << szLine << "]" << endl;
+            //_LOG << "Header: [" << szLine << "]" << endl;
             
             Util::getCSVlikeParser (strValue, ";", 1, vecData);
             
             for (const string& strItem : vecData)
             {
-                _LOG << "  Header Data: " << strItem << endl;
+                //_LOG << "  Header Data: " << strItem << endl;
                 
                 objDrawChart.addColumn(strItem);
             }
@@ -70,7 +70,7 @@ int main(int argc, const char * argv[])
         }
         else
         {
-            _LOG << "Row Line: [" << szLine << "]" << endl;
+            //_LOG << "Row Line: [" << szLine << "]" << endl;
             
             Util::getCSVlikeParser (strValue, ";", 1, vecData);
             
@@ -78,22 +78,22 @@ int main(int argc, const char * argv[])
             
             for (const string& strItem : vecData)
             {
-                _LOG << "  Row Data: " << strItem << endl;
+                //_LOG << "  Row Data: " << strItem << endl;
                 
-                vecRow.push_back (std::strtoull(strItem.c_str(), nullptr, 10));
+                vecRow.push_back (std::atoi(strItem.c_str()));
             }
+            
+            objDrawChart.addData(vecRow);
         }
     }
     
 
     objDrawChart.generateToFile(nWidth, nHeight, argv[3], argv[4], argv[5]);
     
-    
+    /*
     const string strBGColor = argv[3];
     const string strTitle = argv[4];
     
-    
- /*
     _LOG << "BGCOLOR: " << strBGColor << ", strTitle: " << strTitle << endl;
     
     Graphic gChartContext (nWidth, nHeight);
@@ -108,11 +108,14 @@ int main(int argc, const char * argv[])
     gChartContext.SelectDefaultFont(0);
     gChartContext.GPrint(5, 14, 0, MkColor(0,0,0), strTitle.c_str());
     
-    VERIFY ((nFD = open (argv[5], O_WRONLY | O_CREAT | O_TRUNC, 0664)) > 0, "Error: " << std::strerror(errno) << endl, 1);
+    //int nFD;
     
-    jpeg jpegImage (&gChartContext);
-    jpegImage.CompressImage(write_jpg);
+    //VERIFY ((nFD = open (argv[5], O_WRONLY | O_CREAT | O_TRUNC, 0664)) > 0, "Error: " << std::strerror(errno) << endl, 1);
     
-    close(nFD);
-  */
+    jpegFile jpegImage (gChartContext, argv[5]);
+    jpegImage.CompressImage();
+    
+    //close(nFD);
+     */
+    
 }

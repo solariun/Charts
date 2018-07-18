@@ -19,13 +19,14 @@
 #include "Exception.hpp"
 #include "Util.hpp"
 #include "graphic.hpp"
-#include "jpeg.hpp"
+#include "jpge.h"
 #include "Util.hpp"
 
 
 enum DrawChartError
 {
     DC_COLUMN_ADD_DENIED = 10,
+    DC_COLUMN_MAX_DENIED,
     
     DC_GENERATE_FILE_OPEN_ERROR = 20,
     DC_GENERATE_FILE_ERR_READING
@@ -35,23 +36,6 @@ enum DrawChartError
 /*
  * Creating writing structure for jpge
  */
-
-class jpegFile : public jpeg
-{
-private:
-    
-    string strFile;
-    ofstream ofFile;
-    
-    int nFD;
-public:
-    
-    jpegFile (Graphic& pGraphic, const string strFile);
-    ~jpegFile ();
-    
-    void write_jpeg(const uint8_t*, const uint32_t) override;
-
-};
 
 
 class DrawChartException : public Exception
@@ -65,16 +49,17 @@ class DrawChart
 {
 private:
     vector<string> vecColumns;
-    vector<vector<unsigned long long>> vecData;
+    vector<vector<int>> vecData;
     
-    void generate(uint nWidth, uint nHeight, const string strBGColor, const string strTitle, Graphic& refGraphic, jpeg& refJPEG);
-        
+    void generate(uint nWidth, uint nHeight, const string strBGColor, const string strTitle, Graphic& refGraphic);
+    
+    uint32_t nMaxY;
 
 public:
-    DrawChart ();
+    DrawChart (uint32_t nMaxY);
     
     void addColumn(const string strColumnName);
-    void addData(vector<unsigned long long> vecDataRow);
+    void addData(vector<int> vecDataRow);
     
     void generateToFile(uint nWidth, uint nHeight, const string strBGColor, const string strTitle, const string strFileName);
     void generateToString(uint nWidth, uint nHeight, const string strBGColor, const string strTitle, string& strReturn);
