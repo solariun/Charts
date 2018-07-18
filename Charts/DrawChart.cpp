@@ -158,8 +158,6 @@ void DrawChart::generate(uint nWidth, uint nHeight, const string strBGColor, con
     double nXPace = ((nDataWidth / (int)vecData.size()) < 0) ? 1 : ((double) nDataWidth / (int)vecData.size());
     
     //_LOG << "aqui..." << endl;
-
-    gChartContext.DrawBox(10, 35, nDataWidth, nHeight - 5, 0, colorVGAValues [0]);
     
     string strValue = to_string(nMaxY);
     {
@@ -204,6 +202,8 @@ void DrawChart::generate(uint nWidth, uint nHeight, const string strBGColor, con
     
     gChartContext.DrawXPM((nWidth/2)-(250/2), (nHeight/2)-(51/2), 1, 1, 250, 51, 240, (const char**) ericsson_landscape3);
     gChartContext.DrawXPM(nWidth-51, nHeight-51, 1, 1, 50, 50, 20, (const char**) ericsson_logo);
+
+    gChartContext.DrawBox(10, 35, nDataWidth, nHeight - 5, 0, colorBlack);
 
 }
 
