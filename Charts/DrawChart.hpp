@@ -16,11 +16,11 @@
 #include <vector>
 #include <fstream>
 
-#include "Exception.hpp"
-#include "Util.hpp"
-#include "graphic.hpp"
-#include "jpge.h"
-#include "Util.hpp"
+#include <Exception.hpp>
+#include <Util.hpp>
+#include <graphic.hpp>
+#include <jpge.h>
+#include <Util.hpp>
 
 
 enum DrawChartError

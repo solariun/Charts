@@ -15,8 +15,8 @@
 #include <vector>
 #include <cerrno>
 
-#include "Exception.hpp"
-#include "Util.hpp"
+#include <Exception.hpp>
+#include <Util.hpp>
 
 #include "DrawChart.hpp"
 

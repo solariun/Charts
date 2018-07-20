@@ -6,8 +6,9 @@
 //  Copyright © 2018 GUSTAVO CAMPOS. All rights reserved.
 //
 
+#include <graphic.hpp>
+
 #include "DrawChart.hpp"
-#include "graphic.hpp"
 
 
 #include <fcntl.h>
